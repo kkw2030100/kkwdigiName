@@ -1,28 +1,33 @@
 /* ==========================================
    네오부루탈리즘 디지털 명함 - 스타일
-   (neo-brutalism-designer 스킬 적용)
-   가독성 최적화
+   (neo-brutalism-designer 스킬 완전 적용)
+   대담함과 가독성의 완벽한 조화
    ========================================== */
 
 /* 변수 정의 */
 :root {
-    /* 색상 팔레트 - 네오부루탈리즘 파스텔 톤 */
+    /* 색상 팔레트 - 네오부루탈리즘 원색톤 (Tailwind 400 series) */
     --color-black: #000000;
     --color-white: #FFFFFF;
-    --color-bg-yellow: #FFF59F;
-    --color-bg-cream: #FFFEF0;
-    --color-purple: #A8A6FF;
-    --color-pink: #FFA6F6;
-    --color-orange: #FFC29F;
-    --color-cyan: #79F7FF;
-    --color-blue: #A8D8FF;
-    --color-lime: #B8FF9F;
-    --color-red: #FF9F9F;
+    --color-yellow: #FACC15;
+    --color-cyan: #22D3EE;
+    --color-pink: #F472B6;
+    --color-lime: #84CC16;
+    --color-orange: #FB923C;
+    --color-purple: #A855F7;
+    --color-red: #EF4444;
+    --color-violet: #8B5CF6;
 
-    /* 사용할 기본 색상들 */
-    --color-primary: #A8A6FF;
-    --color-secondary: #FFA6F6;
-    --color-accent: #79F7FF;
+    /* 섹션별 색상 */
+    --color-header-bg: #FACC15;
+    --color-profile-bg: #22D3EE;
+    --color-contact-bg: #F472B6;
+    --color-footer-bg: #A855F7;
+
+    /* 기본 색상 */
+    --color-primary: #8B5CF6;
+    --color-secondary: #F472B6;
+    --color-accent: #22D3EE;
 
     /* 테두리 */
     --border-width-thin: 2px;
@@ -30,7 +35,7 @@
     --border-width-thick: 4px;
     --border-style: solid;
 
-    /* 여백 - 가독성을 위해 더 넉넉하게 */
+    /* 여백 - 네오브루탈 스타일의 넉넉한 여백 */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 16px;
@@ -39,7 +44,7 @@
     --spacing-2xl: 48px;
     --spacing-3xl: 64px;
 
-    /* 타이포그래피 - 가독성 강화 */
+    /* 타이포그래피 - 대담함 */
     --font-family-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', Roboto, 'Helvetica Neue', sans-serif;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
@@ -53,16 +58,18 @@
     --font-size-xl: 24px;
     --font-size-2xl: 32px;
     --font-size-3xl: 48px;
+    --font-size-4xl: 64px;
 
-    /* 라인 높이 - 가독성 개선 */
-    --line-height-tight: 1.2;
+    /* 라인 높이 */
+    --line-height-tight: 1.1;
     --line-height-normal: 1.6;
     --line-height-relaxed: 1.8;
 
-    /* 오프셋 섀도우 (neo-brutalism-designer) */
+    /* 오프셋 섀도우 (neo-brutalism-designer 원칙) */
     --shadow-sm: 4px 4px 0px rgba(0, 0, 0, 1);
-    --shadow-md: 6px 6px 0px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 8px 8px 0px rgba(0, 0, 0, 0.2);
+    --shadow-md: 6px 6px 0px rgba(0, 0, 0, 1);
+    --shadow-lg: 8px 8px 0px rgba(0, 0, 0, 1);
+    --shadow-xl: 12px 12px 0px rgba(0, 0, 0, 1);
 
     /* 반응형 */
     --max-width-mobile: 360px;
@@ -87,7 +94,7 @@ html {
 
 body {
     font-family: var(--font-family-main);
-    background-color: var(--color-bg-yellow);
+    background-color: #F5F5F5;
     color: var(--color-black);
     line-height: var(--line-height-normal);
     font-weight: var(--font-weight-normal);
@@ -104,18 +111,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-lg);
-    background-color: var(--color-bg-yellow);
+    padding: var(--spacing-xl);
+    background-color: #F5F5F5;
 }
 
 .card {
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
     background-color: var(--color-white);
     border: var(--border-width-thick) var(--border-style) var(--color-black);
-    padding: var(--spacing-3xl);
-    box-shadow: var(--shadow-lg);
+    padding: 0;
+    box-shadow: var(--shadow-xl);
     animation: fadeIn 0.6s ease-in-out;
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -135,9 +143,9 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    background-color: var(--color-header-bg);
     border-bottom: var(--border-width-thick) var(--border-style) var(--color-black);
+    padding: var(--spacing-3xl) var(--spacing-2xl);
 }
 
 .profile-image-wrapper {
@@ -145,19 +153,19 @@ body {
 }
 
 .profile-image {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     margin: 0 auto;
     border: var(--border-width-thick) var(--border-style) var(--color-black);
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: linear-gradient(135deg, #8B5CF6 0%, #F472B6 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 64px;
+    font-size: 72px;
     font-weight: var(--font-weight-extra-bold);
     color: var(--color-white);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-xl);
     transition: all 0.3s ease;
 }
 
@@ -166,18 +174,18 @@ body {
 }
 
 .name {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 1px;
-    margin-bottom: var(--spacing-md);
+    letter-spacing: -1px;
+    margin-bottom: var(--spacing-sm);
     text-transform: uppercase;
     line-height: var(--line-height-tight);
 }
 
 .title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    letter-spacing: 0.5px;
+    letter-spacing: 0px;
     color: var(--color-black);
     line-height: var(--line-height-normal);
 }
@@ -187,34 +195,34 @@ body {
    ========================================== */
 
 .profile {
-    margin-bottom: var(--spacing-2xl);
+    margin: 0;
 }
 
 .profile-content {
-    padding: var(--spacing-xl);
-    border: var(--border-width-thick) var(--border-style) var(--color-black);
-    background-color: #F9F7FF;
-    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-2xl);
+    border-bottom: var(--border-width-thick) var(--border-style) var(--color-black);
+    background-color: var(--color-profile-bg);
 }
 
 .specialty,
 .service {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: var(--spacing-md);
-    color: var(--color-primary);
+    color: var(--color-black);
     line-height: var(--line-height-tight);
 }
 
 .specialty-text,
 .service-text {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-xl);
-    line-height: var(--line-height-relaxed);
-    color: var(--color-black);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extra-bold);
+    margin-bottom: var(--spacing-lg);
+    line-height: var(--line-height-tight);
+    color: var(--color-white);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
 .service-text {
@@ -226,9 +234,7 @@ body {
    ========================================== */
 
 .divider {
-    height: var(--border-width-thick);
-    background-color: var(--color-black);
-    margin: var(--spacing-2xl) 0;
+    display: none;
 }
 
 /* ==========================================
@@ -236,29 +242,33 @@ body {
    ========================================== */
 
 .contact {
-    margin-bottom: var(--spacing-xl);
+    background-color: var(--color-contact-bg);
+    border-bottom: var(--border-width-thick) var(--border-style) var(--color-black);
+    padding: var(--spacing-2xl);
 }
 
 .contact-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: var(--spacing-xl);
     text-align: center;
     line-height: var(--line-height-tight);
+    color: var(--color-white);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
 .contact-buttons {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
 }
 
 .contact-button {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     padding: var(--spacing-xl);
     border: var(--border-width-thick) var(--border-style) var(--color-black);
     background-color: var(--color-white);
@@ -268,38 +278,38 @@ body {
     transition: all 0.3s ease;
     font-weight: var(--font-weight-bold);
     box-shadow: var(--shadow-lg);
+    gap: var(--spacing-lg);
 }
 
 .contact-button:hover {
-    transform: translateY(-4px) translateX(2px);
-    box-shadow: 10px 12px 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 12px 14px 0px rgba(0, 0, 0, 1);
 }
 
 .contact-button:active {
-    transform: translateY(-2px) translateX(1px);
+    transform: translateY(-2px);
 }
 
 .button-icon {
-    font-size: 40px;
-    margin-bottom: var(--spacing-md);
+    font-size: 48px;
     display: block;
+    flex-shrink: 0;
 }
 
 .button-text {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: var(--spacing-sm);
     line-height: var(--line-height-tight);
 }
 
 .button-subtext {
     font-size: var(--font-size-md);
-    font-weight: var(--font-weight-semibold);
-    opacity: 0.9;
+    font-weight: var(--font-weight-bold);
     line-height: var(--line-height-normal);
+    display: block;
 }
 
 /* 이메일 버튼 */
@@ -329,23 +339,25 @@ body {
 
 .footer {
     text-align: center;
-    padding-top: var(--spacing-xl);
+    background-color: var(--color-footer-bg);
     border-top: var(--border-width-thick) var(--border-style) var(--color-black);
+    padding: var(--spacing-xl);
 }
 
 .footer-text {
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.5px;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-extra-bold);
+    letter-spacing: 1px;
     margin-bottom: var(--spacing-sm);
     line-height: var(--line-height-normal);
+    color: var(--color-white);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
 }
 
 .copyright {
-    font-size: var(--font-size-sm);
-    color: var(--color-black);
-    font-weight: var(--font-weight-normal);
-    opacity: 0.7;
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: var(--font-weight-bold);
     line-height: var(--line-height-normal);
 }
 
@@ -355,14 +367,6 @@ body {
 
 /* 태블릿 (768px 이상) */
 @media (min-width: 768px) {
-    .card {
-        padding: var(--spacing-3xl);
-    }
-
-    .name {
-        font-size: 56px;
-    }
-
     .contact-buttons {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -370,14 +374,22 @@ body {
     }
 
     .contact-button {
-        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: var(--spacing-md);
     }
 
     .button-icon {
-        font-size: 44px;
+        font-size: 52px;
+    }
+
+    .button-text {
+        font-size: var(--font-size-lg);
+    }
+
+    .button-subtext {
+        font-size: var(--font-size-sm);
     }
 }
 
@@ -404,63 +416,73 @@ body {
 
 /* 모바일 소형 (320px 이상) */
 @media (max-width: 480px) {
-    .card {
-        padding: var(--spacing-xl);
-        max-width: 100%;
+    .container {
+        padding: var(--spacing-md);
     }
 
     .header {
-        margin-bottom: var(--spacing-xl);
-        padding-bottom: var(--spacing-xl);
+        padding: var(--spacing-xl) var(--spacing-lg);
     }
 
     .profile-image {
-        width: 120px;
-        height: 120px;
-        font-size: 48px;
+        width: 140px;
+        height: 140px;
+        font-size: 56px;
     }
 
     .name {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
     }
 
     .title {
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-lg);
     }
 
     .profile-content {
         padding: var(--spacing-lg);
     }
 
-    .specialty,
-    .service {
-        font-size: var(--font-size-xs);
-    }
-
     .specialty-text,
     .service-text {
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-xl);
+    }
+
+    .contact {
+        padding: var(--spacing-lg);
+    }
+
+    .contact-title {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-buttons {
+        grid-template-columns: 1fr;
     }
 
     .contact-button {
         padding: var(--spacing-lg);
+        flex-direction: column;
     }
 
     .button-icon {
-        font-size: 32px;
-        margin-bottom: var(--spacing-sm);
+        font-size: 40px;
     }
 
     .button-text {
-        font-size: var(--font-size-md);
+        font-size: var(--font-size-lg);
     }
 
     .button-subtext {
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-md);
     }
 
-    .divider {
-        margin: var(--spacing-xl) 0;
+    .footer {
+        padding: var(--spacing-lg);
+    }
+
+    .footer-text {
+        font-size: var(--font-size-md);
     }
 }
 
