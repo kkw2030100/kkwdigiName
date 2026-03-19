@@ -1,11 +1,12 @@
 /* ==========================================
    네오부루탈리즘 디지털 명함 - 스타일
-   (moonjung.kim 스타일 적용)
+   (neo-brutalism-designer 스킬 적용)
+   가독성 최적화
    ========================================== */
 
 /* 변수 정의 */
 :root {
-    /* 색상 팔레트 - 파스텔 톤 */
+    /* 색상 팔레트 - 네오부루탈리즘 파스텔 톤 */
     --color-black: #000000;
     --color-white: #FFFFFF;
     --color-bg-yellow: #FFF59F;
@@ -15,6 +16,8 @@
     --color-orange: #FFC29F;
     --color-cyan: #79F7FF;
     --color-blue: #A8D8FF;
+    --color-lime: #B8FF9F;
+    --color-red: #FF9F9F;
 
     /* 사용할 기본 색상들 */
     --color-primary: #A8A6FF;
@@ -27,7 +30,7 @@
     --border-width-thick: 4px;
     --border-style: solid;
 
-    /* 여백 */
+    /* 여백 - 가독성을 위해 더 넉넉하게 */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 16px;
@@ -36,21 +39,30 @@
     --spacing-2xl: 48px;
     --spacing-3xl: 64px;
 
-    /* 타이포그래피 */
+    /* 타이포그래피 - 가독성 강화 */
     --font-family-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard', Roboto, 'Helvetica Neue', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extra-bold: 900;
-    --font-size-base: 16px;
+    --font-size-xs: 12px;
     --font-size-sm: 14px;
+    --font-size-base: 16px;
     --font-size-md: 18px;
-    --font-size-lg: 24px;
-    --font-size-xl: 32px;
-    --font-size-2xl: 48px;
-    --font-size-3xl: 64px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 48px;
 
-    /* 오프셋 섀도우 (moonjung.kim 스타일) */
-    --shadow-offset: 6px 6px 0px rgba(0, 0, 0, 0.15);
-    --shadow-offset-dark: 8px 8px 0px rgba(0, 0, 0, 0.2);
+    /* 라인 높이 - 가독성 개선 */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+
+    /* 오프셋 섀도우 (neo-brutalism-designer) */
+    --shadow-sm: 4px 4px 0px rgba(0, 0, 0, 1);
+    --shadow-md: 6px 6px 0px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 8px 8px 0px rgba(0, 0, 0, 0.2);
 
     /* 반응형 */
     --max-width-mobile: 360px;
@@ -77,8 +89,10 @@ body {
     font-family: var(--font-family-main);
     background-color: var(--color-bg-yellow);
     color: var(--color-black);
-    line-height: 1.6;
-    font-weight: 400;
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-weight-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================
@@ -96,11 +110,11 @@ body {
 
 .card {
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
     background-color: var(--color-white);
     border: var(--border-width-thick) var(--border-style) var(--color-black);
-    padding: var(--spacing-2xl);
-    box-shadow: var(--shadow-offset);
+    padding: var(--spacing-3xl);
+    box-shadow: var(--shadow-lg);
     animation: fadeIn 0.6s ease-in-out;
 }
 
@@ -122,17 +136,17 @@ body {
 .header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-xl);
-    border-bottom: var(--border-width-medium) var(--border-style) var(--color-black);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: var(--border-width-thick) var(--border-style) var(--color-black);
 }
 
 .profile-image-wrapper {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
 }
 
 .profile-image {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto;
     border: var(--border-width-thick) var(--border-style) var(--color-black);
     border-radius: 50%;
@@ -140,10 +154,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 56px;
+    font-size: 64px;
     font-weight: var(--font-weight-extra-bold);
     color: var(--color-white);
-    box-shadow: var(--shadow-offset-dark);
+    box-shadow: var(--shadow-lg);
     transition: all 0.3s ease;
 }
 
@@ -152,18 +166,20 @@ body {
 }
 
 .name {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 2px;
-    margin-bottom: var(--spacing-sm);
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
     text-transform: uppercase;
+    line-height: var(--line-height-tight);
 }
 
 .title {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
-    letter-spacing: 1px;
-    color: var(--color-dark-gray);
+    letter-spacing: 0.5px;
+    color: var(--color-black);
+    line-height: var(--line-height-normal);
 }
 
 /* ==========================================
@@ -175,28 +191,30 @@ body {
 }
 
 .profile-content {
-    padding: var(--spacing-lg);
-    border: var(--border-width-medium) var(--border-style) var(--color-black);
+    padding: var(--spacing-xl);
+    border: var(--border-width-thick) var(--border-style) var(--color-black);
     background-color: #F9F7FF;
-    box-shadow: var(--shadow-offset);
+    box-shadow: var(--shadow-lg);
 }
 
 .specialty,
 .service {
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 1px;
+    font-weight: var(--font-weight-extra-bold);
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     color: var(--color-primary);
+    line-height: var(--line-height-tight);
 }
 
 .specialty-text,
 .service-text {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-black);
 }
 
 .service-text {
@@ -208,9 +226,9 @@ body {
    ========================================== */
 
 .divider {
-    height: var(--border-width-medium);
+    height: var(--border-width-thick);
     background-color: var(--color-black);
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-2xl) 0;
 }
 
 /* ==========================================
@@ -222,63 +240,66 @@ body {
 }
 
 .contact-title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
     text-align: center;
+    line-height: var(--line-height-tight);
 }
 
 .contact-buttons {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
 }
 
 .contact-button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--spacing-lg);
-    border: var(--border-width-medium) var(--border-style) var(--color-black);
+    padding: var(--spacing-xl);
+    border: var(--border-width-thick) var(--border-style) var(--color-black);
     background-color: var(--color-white);
     color: var(--color-black);
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: var(--font-weight-bold);
-    box-shadow: var(--shadow-offset);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 8px 12px 0px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px) translateX(2px);
+    box-shadow: 10px 12px 0px rgba(0, 0, 0, 0.2);
 }
 
 .contact-button:active {
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateX(1px);
 }
 
 .button-icon {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-sm);
+    font-size: 40px;
+    margin-bottom: var(--spacing-md);
     display: block;
 }
 
 .button-text {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-extra-bold);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    line-height: var(--line-height-tight);
 }
 
 .button-subtext {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    opacity: 0.8;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    opacity: 0.9;
+    line-height: var(--line-height-normal);
 }
 
 /* 이메일 버튼 */
@@ -308,21 +329,24 @@ body {
 
 .footer {
     text-align: center;
-    padding-top: var(--spacing-lg);
-    border-top: var(--border-width-medium) var(--border-style) var(--color-black);
+    padding-top: var(--spacing-xl);
+    border-top: var(--border-width-thick) var(--border-style) var(--color-black);
 }
 
 .footer-text {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     margin-bottom: var(--spacing-sm);
+    line-height: var(--line-height-normal);
 }
 
 .copyright {
     font-size: var(--font-size-sm);
-    color: var(--color-dark-gray);
-    font-weight: 400;
+    color: var(--color-black);
+    font-weight: var(--font-weight-normal);
+    opacity: 0.7;
+    line-height: var(--line-height-normal);
 }
 
 /* ==========================================
@@ -340,19 +364,20 @@ body {
     }
 
     .contact-buttons {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: var(--spacing-lg);
     }
 
     .contact-button {
-        flex: 1;
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
     .button-icon {
-        font-size: 40px;
+        font-size: 44px;
     }
 }
 
@@ -380,50 +405,62 @@ body {
 /* 모바일 소형 (320px 이상) */
 @media (max-width: 480px) {
     .card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-xl);
+        max-width: 100%;
     }
 
     .header {
-        margin-bottom: var(--spacing-lg);
-        padding-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
     }
 
     .profile-image {
-        width: 100px;
-        height: 100px;
-        font-size: 40px;
+        width: 120px;
+        height: 120px;
+        font-size: 48px;
     }
 
     .name {
-        font-size: 32px;
+        font-size: var(--font-size-2xl);
     }
 
     .title {
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-md);
     }
 
     .profile-content {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+
+    .specialty,
+    .service {
+        font-size: var(--font-size-xs);
+    }
+
+    .specialty-text,
+    .service-text {
+        font-size: var(--font-size-md);
     }
 
     .contact-button {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
     }
 
     .button-icon {
-        font-size: 28px;
+        font-size: 32px;
+        margin-bottom: var(--spacing-sm);
     }
 
     .button-text {
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-md);
     }
 
     .button-subtext {
-        font-size: 12px;
+        font-size: var(--font-size-sm);
     }
 
     .divider {
-        margin: var(--spacing-lg) 0;
+        margin: var(--spacing-xl) 0;
     }
 }
 
