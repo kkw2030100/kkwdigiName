@@ -1,0 +1,472 @@
+/* ==========================================
+   네오부루탈리즘 디지털 명함 - 스타일
+   ========================================== */
+
+/* 변수 정의 */
+:root {
+    /* 색상 팔레트 */
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-light-gray: #F5F5F5;
+    --color-medium-gray: #E0E0E0;
+    --color-dark-gray: #333333;
+    --color-accent-blue: #0066FF;
+    --color-accent-orange: #FF6633;
+
+    /* 테두리 */
+    --border-width-thin: 2px;
+    --border-width-medium: 3px;
+    --border-width-thick: 4px;
+    --border-style: solid;
+
+    /* 여백 */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+
+    /* 타이포그래피 */
+    --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 900;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-md: 18px;
+    --font-size-lg: 24px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 48px;
+    --font-size-3xl: 64px;
+
+    /* 그림자 (네오부루탈리즘은 최소한의 그림자) */
+    --shadow-none: none;
+    --shadow-light: 2px 2px 0px var(--color-dark-gray);
+
+    /* 반응형 */
+    --max-width-mobile: 360px;
+    --max-width-tablet: 768px;
+    --max-width-desktop: 1024px;
+}
+
+/* ==========================================
+   리셋 및 기본 스타일
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-main);
+    background-color: var(--color-light-gray);
+    color: var(--color-black);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ==========================================
+   컨테이너 및 레이아웃
+   ========================================== */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-light-gray);
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--color-white);
+    border: var(--border-width-thick) var(--border-style) var(--color-black);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-light);
+}
+
+/* ==========================================
+   헤더 섹션 (프로필)
+   ========================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: var(--border-width-medium) var(--border-style) var(--color-black);
+}
+
+.profile-image-wrapper {
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border: var(--border-width-thick) var(--border-style) var(--color-black);
+    border-radius: 50%;
+    background-color: var(--color-accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: var(--font-weight-extra-bold);
+    color: var(--color-white);
+}
+
+.profile-initial {
+    display: block;
+}
+
+.name {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extra-bold);
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1px;
+    color: var(--color-dark-gray);
+}
+
+/* ==========================================
+   프로필 섹션
+   ========================================== */
+
+.profile {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.profile-content {
+    padding: var(--spacing-lg);
+    border: var(--border-width-medium) var(--border-style) var(--color-black);
+}
+
+.specialty,
+.service {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-accent-blue);
+}
+
+.specialty-text,
+.service-text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.service-text {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   구분선
+   ========================================== */
+
+.divider {
+    height: var(--border-width-medium);
+    background-color: var(--color-black);
+    margin: var(--spacing-xl) 0;
+}
+
+/* ==========================================
+   연락처 섹션
+   ========================================== */
+
+.contact {
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-extra-bold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+    border: var(--border-width-medium) var(--border-style) var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: var(--font-weight-bold);
+}
+
+.contact-button:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transform: translate(2px, 2px);
+    box-shadow: -4px -4px 0px var(--color-accent-blue);
+}
+
+.contact-button:active {
+    transform: translate(4px, 4px);
+}
+
+.button-icon {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.button-text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-extra-bold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.button-subtext {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    opacity: 0.8;
+}
+
+/* 이메일 버튼 */
+.email-btn:hover {
+    border-color: var(--color-accent-blue);
+}
+
+/* 전화 버튼 */
+.phone-btn:hover {
+    border-color: var(--color-accent-orange);
+}
+
+/* 유튜브 버튼 */
+.youtube-btn:hover {
+    border-color: var(--color-accent-orange);
+}
+
+/* ==========================================
+   푸터 섹션
+   ========================================== */
+
+.footer {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: var(--border-width-medium) var(--border-style) var(--color-black);
+}
+
+.footer-text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.copyright {
+    font-size: var(--font-size-sm);
+    color: var(--color-dark-gray);
+    font-weight: 400;
+}
+
+/* ==========================================
+   반응형 디자인
+   ========================================== */
+
+/* 태블릿 (768px 이상) */
+@media (min-width: 768px) {
+    .card {
+        padding: var(--spacing-3xl);
+    }
+
+    .name {
+        font-size: 56px;
+    }
+
+    .contact-buttons {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+    }
+
+    .contact-button {
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .button-icon {
+        font-size: 40px;
+    }
+}
+
+/* 데스크톱 (1024px 이상) */
+@media (min-width: 1024px) {
+    .container {
+        padding: var(--spacing-3xl);
+    }
+
+    .card {
+        max-width: 700px;
+    }
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+        font-size: 56px;
+    }
+
+    .name {
+        font-size: 64px;
+    }
+}
+
+/* 모바일 소형 (320px 이상) */
+@media (max-width: 480px) {
+    .card {
+        padding: var(--spacing-lg);
+    }
+
+    .header {
+        margin-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .title {
+        font-size: var(--font-size-sm);
+    }
+
+    .profile-content {
+        padding: var(--spacing-md);
+    }
+
+    .contact-button {
+        padding: var(--spacing-md);
+    }
+
+    .button-icon {
+        font-size: 28px;
+    }
+
+    .button-text {
+        font-size: var(--font-size-sm);
+    }
+
+    .button-subtext {
+        font-size: 12px;
+    }
+
+    .divider {
+        margin: var(--spacing-lg) 0;
+    }
+}
+
+/* ==========================================
+   인쇄 스타일
+   ========================================== */
+
+@media print {
+    body {
+        background-color: var(--color-white);
+    }
+
+    .container {
+        min-height: auto;
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none;
+        max-width: 100%;
+    }
+
+    .contact-button:hover {
+        background-color: var(--color-white);
+        color: var(--color-black);
+    }
+}
+
+/* ==========================================
+   포커스 및 접근성
+   ========================================== */
+
+.contact-button:focus {
+    outline: var(--border-width-medium) var(--border-style) var(--color-accent-blue);
+    outline-offset: 2px;
+}
+
+/* 다크 모드 (선택) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-dark-gray);
+    }
+
+    .card {
+        background-color: #1a1a1a;
+        border-color: var(--color-white);
+    }
+
+    .header {
+        border-bottom-color: var(--color-white);
+    }
+
+    .profile-content {
+        border-color: var(--color-white);
+    }
+
+    .divider {
+        background-color: var(--color-white);
+    }
+
+    .footer {
+        border-top-color: var(--color-white);
+    }
+
+    .contact-button {
+        border-color: var(--color-white);
+        background-color: #1a1a1a;
+        color: var(--color-white);
+    }
+
+    .contact-button:hover {
+        background-color: var(--color-white);
+        color: #1a1a1a;
+    }
+}
